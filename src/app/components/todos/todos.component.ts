@@ -25,4 +25,10 @@ export class TodosComponent implements OnInit {
     this.dataService.deleteTodo(todo).subscribe(()=>console.log(`Deleted: ${todo.id}`));
   }
 
+  addTodo(todo:Todo) {
+    this.dataService.addTodo(todo).subscribe(todo => {
+      this.todos.push(todo);
+    })
+  }
+
 }

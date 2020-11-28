@@ -32,4 +32,8 @@ export class DataService {
     const url = `${this.dataUrl}/${todo.id}`
     return this.http.delete<Todo>(url, httpOptions)
   }
+
+  addTodo(todo:Todo):Observable<Todo> {
+    return this.http.post<Todo>(this.dataUrl, todo, httpOptions)
+  }
 }
